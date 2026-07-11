@@ -163,11 +163,6 @@ header aside
     background-color: var(--bg-main);
 }
 
-body {
-    /* Gardez votre overflow: hidden si nécessaire, mais attention au scroll */
-    overflow-x: hidden; 
-}   
-
 @media (max-width: 768px) 
 {
     header nav
