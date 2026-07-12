@@ -1,0 +1,235 @@
+:root {
+    /* Arrière-plans */
+    --bg-main: #0D1117; 
+    --bg-card: rgba(22, 27, 34, 0.7); 
+
+    /* Accents Néons Lumineux (Utilisés pour la 3D et l'UI) */
+    --neon-cyan: #00F2FE;   
+    --neon-purple: #7F00FF;      
+
+    /*text*/
+    --text-primary: #FFFFFF;   
+    --text-secondary: #8B949E;   
+    --border-color: rgba(0, 242, 254, 0.2);
+
+    --removed-body-scroll-bar-size: 0px;
+    --color-bg: #000;
+    --color-bg-transparent: #1110;
+    --color-text-main: #fff;
+    --color-text-navigation: var(--color-white-070);
+    --color-text-paragraph: var(--color-white-060);
+    --color-blue: #0062ff;
+    --color-blue-lighter: #5797ff;
+    --color-blue-dark: #217ce5;
+    --color-blue-ios: #5966f3;
+    --color-red: #fd585b;
+    --color-yellow: #ffb01f;
+    --color-purple: #8f66ff21;
+    --color-purple-bright: #a770ff;
+    --color-green: #49bc541a;
+    --color-green-bright: #47b35f;
+    --color-pink: #ff5cab;
+    --color-white: #fff;
+    --color-bg-pink: #ffe6e6;
+    --color-bg-greenish: #c1f6e8;
+    --color-btn-bg: #ffffff0d;
+    --color-btn-bg-highlight: #ffffff0f;
+    --panel-bg-alpha: .08;
+    --color-panel-bg: rgba(255,255,255,var(--panel-bg-alpha));
+    --color-panel-bg-hover: rgba(255,255,255,calc(var(--panel-bg-alpha) + .03));
+    --color-menu-dropdown: #1e1e23cc;
+    --color-white-001: #ffffff03;
+    --color-white-003: #ffffff08;
+    --color-white-005: #ffffff0d;
+    --color-white-008: #ffffff14;
+    --color-white-010: #ffffff1a;
+    --color-white-020: #fff3;
+    --color-white-040: #fff6;
+    --color-white-060: #fff9;
+    --color-white-070: #ffffffb3;
+    --color-white-080: #fffc;
+    --color-white-090: #ffffffe6;
+    --color-free: var(--color-panel-bg);
+    --color-free-darker: var(--color-panel-bg-hover);
+    --color-super: #00a376;
+    --color-super-darker: #008761;
+    --color-super-lighter: #38e2b3;
+    --color-team: #915eff;
+    --color-team-darker: #7448d4;
+    --color-team-lighter: #d680ff;
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    position: relative;
+    background-color: var(--bg-main);
+    color: var(--color-white);
+    overflow: hidden;
+    font-family: "Orbitron", "Inter", sans-serif;
+    overflow-x: hidden;
+}
+
+header
+{
+    position: sticky;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 15px 0px;
+    border-bottom: 1px solid var(--bg-card);
+}
+
+header .logo
+{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    width: 20%;
+}
+
+header .logo h4
+{
+    color: var(--text-primary);
+}
+
+header .logo h5 
+{
+    color: var(--text-secondary);
+}
+
+header nav
+{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    gap: 2rem;
+}
+
+header nav a
+{
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 600;
+    padding: 10px 0px;
+    display: inline-block;
+    position: relative;  
+}
+
+header nav a::after 
+{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--border-color);
+    
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.2s ease-in;
+}
+
+header nav a:hover::after 
+{
+    transform: scaleX(1);
+}
+
+header aside 
+{
+    display: none;
+}
+
+.hidden
+{
+    display: none;
+}
+
+#bg-canvas 
+{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+@media (max-width: 768px) 
+{
+    header nav
+    {
+        display: none;
+    }
+
+    header aside
+    {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 15px; 
+        padding: 8px 10px;
+        font-size: 1.2rem;
+        border-radius: 20px;
+    }
+
+    header aside:hover
+    {
+        background: var(--text-secondary);
+        transition: linear 0.3s ease-in-out;
+    }
+
+    header aside:active
+    {
+        transform: scale(1.1);   
+    }
+
+    .sideBarMenu
+    {
+        display: none;
+        background-color: var(--bg-card);
+        backdrop-filter: blur(20px);
+        position: fixed;
+        top: 70px;
+        right: 20px;
+        padding: 25px 80px 25px 20px;
+        border-radius: 25px;
+        gap: 0.8rem;
+    }
+
+    .active
+    {
+        display: flex;
+        flex-direction: column;
+        animation: appear 0.5s linear;
+    }
+
+    .sideBarMenu a
+    {
+        text-decoration: none;
+        color: var(--text-secondary);
+        font-weight: 600;
+        padding: 10px;
+    }
+
+    .sideBarMenu a:hover
+    {
+        color: var(--text-primary);
+        font-weight: 800;
+        border-left: 1px solid var(--border-color);
+        animation: appear 0.3s linear;
+    }
+}
+
+@keyframes appear
+{
+    from { opacity:0%};
+    to {opacity:100%};
+}
