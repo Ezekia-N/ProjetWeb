@@ -8,7 +8,8 @@
     <link rel="icon" href="data:,">
     <script type="importmap">
     {
-        "imports": {
+        "imports": 
+        {
             "three": "./three.module.js?v=1",
             "three/addons/GLTFLoader.js": "./GLTFLoader.js"
         }
@@ -30,7 +31,7 @@
             <a href="#" class="projectsButton">PROJECTS</a>
             <a href="#" class="servicesButton">SERVICES</a>
             <a href="#" class="aboutButton">ABOUT</a>
-            <a href="#" class="contactButton">CONTACT</a>
+            <a href="#" class="contactsButton">CONTACTS</a>
         </nav>
         <aside id="sideBar">
             <i class="fas fa-bars"></i>
@@ -39,13 +40,25 @@
 
     <!---->
     <main>
-        <canvas id="bg-canvas"></canvas>
+        <canvas id="bg-canvas" class="homePage"></canvas>
         <div class="sideBarMenu hidden">
             <a href="#" class="homeButton">HOME</a>
             <a href="#" class="projectsButton">PROJECTS</a>
             <a href="#" class="servicesButton">SERVICES</a>
             <a href="#" class="aboutButton">ABOUT</a>
-            <a href="#" class="contactButton">CONTACT</a>
+            <a href="#" class="contactsButton">CONTACTS</a>
+        </div>
+        <div class="projectsPage hidden">
+            <p>Bienvenue dans notre page de projets</p>
+        </div>
+        <div class="servicesPage hidden">
+            <p>Bienvenue dans notre page de services</p>
+        </div>
+        <div class="aboutPage hidden">
+            <p>Bienvenue dans notre page de about</p>
+        </div>
+        <div class="contactsPage hidden">
+            <p>Bienvenue dans notre page de contacts</p>
         </div>
     </main>
 

@@ -4,9 +4,21 @@ import { GLTFLoader } from 'three/addons/GLTFLoader.js';
 const sideBar = document.getElementById("sideBar");
 const sideBarMenu = document.querySelector(".sideBarMenu");
 const bgCanvas = document.getElementById("bg-canvas");
+const homeButtons = document.querySelectorAll(".homeButton");
+const projectsButtons = document.querySelectorAll(".projectsButton");
+const servicesButtons = document.querySelectorAll(".servicesButton");
+const aboutButtons = document.querySelectorAll(".aboutButton");
+const contactsButtons = document.querySelectorAll(".contactsButton");
+const homePage = document.querySelector(".homePage");
+const projectsPage = document.querySelector(".projectsPage");
+const servicesPage = document.querySelector(".servicesPage");
+const aboutPage = document.querySelector(".aboutPage");
+const contactsPage = document.querySelector(".contactsPage");
+
+const pageLists = [homePage, projectsPage, servicesPage, aboutPage, contactsPage];
 
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(5, window.innerWidth / window.innerHeight, 0.1, 1000);
 const ambientLight = new THREE.AmbientLight(0xffffff, 10); 
 const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
 const renderer = new THREE.WebGLRenderer({
@@ -20,7 +32,7 @@ const loader = new GLTFLoader();
 let model = null;
 
 scene.position.set(0, 0, 0);
-camera.position.set(0, 0, 90);
+camera.position.set(0, 0, 5);
 directionalLight.position.set(5, 10, 7);
 
 scene.add(ambientLight);
@@ -66,4 +78,50 @@ animate();
 
 sideBar.addEventListener("click", e => {
     sideBarMenu.classList.toggle("active");
+});
+
+function displayPage(currentPage)
+{
+    currentPage.classList.remove("hidden");
+    pageLists.forEach(page => {
+        if (page !== currentPage)
+        {
+            page.classList.add("hidden");
+        }
+    });
+}
+
+homeButtons.forEach(homeButton => {
+    homeButton.addEventListener("click", event => {
+        event.preventDefault();
+        displayPage(homePage);
+    });
+});
+
+projectsButtons.forEach(projectsButton => {
+    projectsButton.addEventListener("click", event => {
+        event.preventDefault();
+        displayPage(projectsPage);
+    });
+});
+
+servicesButtons.forEach(servicesButton => {
+    servicesButton.addEventListener("click", event => {
+        event.preventDefault();
+        displayPage(servicesPage);
+    });
+});
+
+aboutButtons.forEach(aboutButton => {
+    aboutButton.addEventListener("click", event => {
+        event.preventDefault();
+        displayPage(aboutPage);
+    });
+});
+
+contactsButtons.forEach(contactsButton => {
+    contactsButton.addEventListener("click", event => {
+        event.preventDefault();
+        displayPage(contactsPage);
+    });
 });
