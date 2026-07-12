@@ -30,7 +30,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 loader.load(
-    './space_station_modules(1).glb', (gltf) => {
+    './looking_glass_hologram_technology_meet_art.glb', (gltf) => {
         model = gltf.scene;
         model.position.set(0, 0, 0); 
         model.scale.set(1, 1, 1); 
