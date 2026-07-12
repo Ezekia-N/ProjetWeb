@@ -1,0 +1,22 @@
+{
+  "name": "projetweb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ezekia-N/ProjetWeb.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Ezekia-N/ProjetWeb/issues"
+  },
+  "homepage": "https://github.com/Ezekia-N/ProjetWeb#readme",
+  "dependencies": {
+    "three": "^0.185.1"
+  }
+}
